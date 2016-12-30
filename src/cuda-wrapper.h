@@ -8,7 +8,6 @@
 #include <cuda_runtime.h>
 #include "complex_t.h"
 
-__global__ void reciprocalKernel(float *data, unsigned vectorSize);
 float *callAComplexType(float *data, unsigned size);
 
 #endif

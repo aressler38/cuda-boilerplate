@@ -24,7 +24,7 @@ float *callAComplexType(float *data, unsigned size) {
 
 	cudaMalloc((void **)&gpuData, sizeof(float)*size);
 	cudaMemcpy(gpuData, data, sizeof(float)*size, cudaMemcpyHostToDevice);
-	
+
 	callAComplexTypeKernel<<<blockCount, BLOCK_SIZE>>> (gpuData, size);
 
 	cudaMemcpy(rc, gpuData, sizeof(float)*size, cudaMemcpyDeviceToHost);
